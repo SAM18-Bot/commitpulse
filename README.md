@@ -226,7 +226,7 @@ npm install
 
 # 3. Create your environment file
 cat > .env.local << 'EOF'
-GITHUB_TOKEN=your_github_pat_here
+GITHUB_PAT=your_github_pat_here
 
 # Optional — enables user tracking (see below)
 # MONGODB_URI=mongodb+srv://...
