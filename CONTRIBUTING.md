@@ -66,7 +66,7 @@ cp .env.local.example .env.local
 
 Open `.env.local` and fill in your values. Every variable is documented inside the file. The key ones are:
 
-> **Why is `GITHUB_TOKEN` required?** The GitHub GraphQL API requires authentication. Without a valid `GITHUB_TOKEN`, every request to `/api/streak` will return a `401 Unauthorized` error and the badge will not render.
+> **Why is `GITHUB_PAT` required?** The GitHub GraphQL API requires authentication. Without a valid `GITHUB_PAT`, every request to `/api/streak` will return a `401 Unauthorized` error and the badge will not render.
 
 > **Why is `MONGODB_URI` optional?** The `/api/track-user` route is designed to degrade gracefully. If the variable is missing, it logs a warning to the console and skips the DB write — your local dev experience is completely unaffected.
 
@@ -84,7 +84,7 @@ Open your browser and test your changes:
 http://localhost:3000/api/streak?user=YOUR_GITHUB_USERNAME
 ```
 
-> **⚠️ Important:** Never commit your `.env.local` file or expose your `GITHUB_TOKEN`. It is already in `.gitignore`.
+> **⚠️ Important:** Never commit your `.env.local` file or expose your `GITHUB_PAT`. It is already in `.gitignore`.
 
 ---
 
