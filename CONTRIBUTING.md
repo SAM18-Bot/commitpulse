@@ -66,7 +66,7 @@ cp .env.local.example .env.local
 
 Open `.env.local` and fill in your values. Every variable is documented inside the file. The key ones are:
 
-> **Why is `GITHUB_PAT` required?** The GitHub GraphQL API requires authentication. Without a valid `GITHUB_PAT`, every request to `/api/streak` will return a `401 Unauthorized` error and the badge will not render.
+> **Why is `GITHUB_PAT` required?** The GitHub GraphQL API requires authentication. `GITHUB_PAT` is the preferred environment variable name for new setups. For compatibility, `GITHUB_TOKEN` is still supported as a fallback/deprecated alias, but documenting and configuring `GITHUB_PAT` avoids confusion. Without a valid token, requests to `/api/streak` will return a `401 Unauthorized` error and the badge will not render.
 
 > **Why is `MONGODB_URI` optional?** The `/api/track-user` route is designed to degrade gracefully. If the variable is missing, it logs a warning to the console and skips the DB write — your local dev experience is completely unaffected.
 
